@@ -92,7 +92,7 @@
       });
       const np = $("#newProj"); if (np) np.onclick = () => {
         const id = "p" + Date.now();
-        DATA.projects.push({ id, title_fr: "Nouveau projet", title_ar: "مشروع جديد", location_fr: "Alger", location_ar: "الجزائر", status: "encours", type_fr: "F3 • F4", type_ar: "ش3 • ش4", price: "Prix sur demande", surface: "—", desc_fr: "", desc_ar: "", images: [DATA.hero.poster], mapsUrl: DATA.contact.mapsLink });
+        DATA.projects.push({ id, title_fr: "Nouveau projet", title_ar: "مشروع جديد", location_fr: "Oran", location_ar: "وهران", status: "encours", type_fr: "F3 • F4", type_ar: "ش3 • ش4", price: "Prix sur demande", surface: "—", desc_fr: "", desc_ar: "", images: [DATA.hero.poster], mapsUrl: DATA.contact.mapsLink });
         editingProject = id; save(true); renderForm();
       };
       const sp = $("#saveProj");

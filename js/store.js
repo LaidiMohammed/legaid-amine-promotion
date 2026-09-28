@@ -21,8 +21,8 @@
     hero: {
       video: "https://videos.pexels.com/video-files/3571264/3571264-uhd_2560_1440_30fps.mp4",
       poster: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=1920&auto=format&fit=crop",
-      kicker_fr: "Promotion immobilière — Alger",
-      kicker_ar: "ترقية عقارية — الجزائر",
+      kicker_fr: "Promotion immobilière — Oran",
+      kicker_ar: "ترقية عقارية — وهران",
       title_fr: "On ne vend pas des murs, on livre des adresses.",
       title_ar: "لا نبيع الجدران، بل نسلّم عناوين.",
       sub_fr: "Résidences soignées, plans lisibles, chantier suivi en vidéo. Découvrez nos projets, visitez, puis décidez.",
@@ -33,8 +33,8 @@
       cta_contact_ar: "تحدث عبر واتساب"
     },
     marquee: {
-      fr: "Résidences • Plans • Chantier suivi • Livraison garantie • Alger •",
-      ar: "إقامات • مخططات • متابعة الورش • تسليم مضمون • الجزائر •"
+      fr: "Résidences • Plans • Chantier suivi • Livraison garantie • Oran •",
+      ar: "إقامات • مخططات • متابعة الورش • تسليم مضمون • وهران •"
     },
     stats: [
       { value: "12+", label_fr: "Résidences livrées", label_ar: "إقامة مسلّمة" },
@@ -47,8 +47,8 @@
         id: "yasmine",
         title_fr: "Résidence El Yasmine",
         title_ar: "إقامة الياسمين",
-        location_fr: "Draria, Alger",
-        location_ar: "درارية، الجزائر",
+        location_fr: "Bir El Djir, Oran",
+        location_ar: "بير الجير، وهران",
         status: "encours",
         type_fr: "F3 • F4 • Duplex",
         type_ar: "ش3 • ش4 • دوبلكس",
@@ -61,14 +61,14 @@
           "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1200&auto=format&fit=crop",
           "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=80&w=1200&auto=format&fit=crop"
         ],
-        mapsUrl: "https://www.google.com/maps/search/?api=1&query=Draria+Alger"
+        mapsUrl: "https://www.google.com/maps/search/?api=1&query=Bir+El+Djir+Oran"
       },
       {
         id: "oliviers",
         title_fr: "Résidence Les Oliviers",
         title_ar: "إقامة الزيتون",
-        location_fr: "Birkhadem, Alger",
-        location_ar: "بير خادم، الجزائر",
+        location_fr: "Es Sénia, Oran",
+        location_ar: "السانية، وهران",
         status: "livre",
         type_fr: "F2 • F3 • F4",
         type_ar: "ش2 • ش3 • ش4",
@@ -81,14 +81,14 @@
           "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
           "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1200&auto=format&fit=crop"
         ],
-        mapsUrl: "https://www.google.com/maps/search/?api=1&query=Birkhadem+Alger"
+        mapsUrl: "https://www.google.com/maps/search/?api=1&query=Es+Senia+Oran"
       },
       {
         id: "baraka",
         title_fr: "Dar El Baraka — Villas",
         title_ar: "دار البركة — فيلات",
-        location_fr: "Baba Hassen, Alger",
-        location_ar: "بابا حسن، الجزائر",
+        location_fr: "Aïn El Turk, Oran",
+        location_ar: "عين الترك، وهران",
         status: "encours",
         type_fr: "Villas 5P + jardin",
         type_ar: "فيلات 5 غرف + حديقة",
@@ -101,14 +101,14 @@
           "https://images.unsplash.com/photo-1600573472592-401b489a3cdc?q=80&w=1200&auto=format&fit=crop",
           "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?q=80&w=1200&auto=format&fit=crop"
         ],
-        mapsUrl: "https://www.google.com/maps/search/?api=1&query=Baba+Hassen+Alger"
+        mapsUrl: "https://www.google.com/maps/search/?api=1&query=Ain+El+Turk+Oran"
       }
     ],
     about: {
       title_fr: "Zaouche & Amine — bâtisseurs, pas vendeurs.",
       title_ar: "زاوش وأمين — بنّاؤون، لا بائعون.",
-      text_fr: "Legaid Amine Promotion, c'est une équipe familiale d'Alger. On choisit peu de projets, on les suit nous-mêmes, on filme le chantier et on reste joignable après la remise des clés. Nos plans sont affichés, nos prix sont écrits, nos délais sont tenus.",
-      text_ar: "لقايد أمين للترقية العقارية فريق عائلي من الجزائر. نختار مشاريع قليلة، نتابعها بأنفسنا، نوثق الورش بالفيديو ونبقى متاحين بعد تسليم المفاتيح. مخططات معلنة، أسعار مكتوبة، وآجال محترمة.",
+      text_fr: "Legaid Amine Promotion, c'est une équipe familiale d'Oran. On choisit peu de projets, on les suit nous-mêmes, on filme le chantier et on reste joignable après la remise des clés. Nos plans sont affichés, nos prix sont écrits, nos délais sont tenus.",
+      text_ar: "لقايد أمين للترقية العقارية فريق عائلي من وهران. نختار مشاريع قليلة، نتابعها بأنفسنا، نوثق الورش بالفيديو ونبقى متاحين بعد تسليم المفاتيح. مخططات معلنة، أسعار مكتوبة، وآجال محترمة.",
       image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1200&auto=format&fit=crop",
       years: "15",
       years_label_fr: "ans de chantier",
@@ -120,12 +120,12 @@
       phone: "+213 550 00 00 00",
       whatsapp: "213550000000",
       email: "contact@legaid-amine.dz",
-      address_fr: "Rue principale, Draria — Alger",
-      address_ar: "الشارع الرئيسي، درارية — الجزائر",
+      address_fr: "Rue principale, Bir El Djir — Oran",
+      address_ar: "الشارع الرئيسي، بير الجير — وهران",
       hours_fr: "Sam – Jeu • 9h → 18h",
       hours_ar: "السبت – الخميس • 9 → 18",
-      mapsLink: "https://www.google.com/maps/search/?api=1&query=Draria+Alger",
-      mapEmbed: "https://www.openstreetmap.org/export/embed.html?bbox=2.85%2C36.68%2C3.15%2C36.82&layer=mapnik&marker=36.750%2C3.000"
+      mapsLink: "https://www.google.com/maps/search/?api=1&query=Bir+El+Djir+Oran",
+      mapEmbed: "https://www.openstreetmap.org/export/embed.html?bbox=-0.75%2C35.60%2C-0.50%2C35.78&layer=mapnik&marker=35.6969%2C-0.6331"
     },
     socials: {
       facebook: "https://www.facebook.com/share/1Da7GwLqFg/",
