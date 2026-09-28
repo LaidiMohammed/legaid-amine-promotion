@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr" id="htmlRoot">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Legaid Amine — Promotion Immobilière | Alger</title>
+<meta name="description" content="Legaid Amine Promotion Immobilière à Alger — résidences soignées, plans affichés, suivi chantier vidéo.">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%23c9a24b'/><text x='50' y='66' font-size='44' text-anchor='middle' font-family='serif' fill='%231a1405'>LA</text></svg>">
+</head>
+<body>
+
+<!-- TOP NAV (desktop pill) -->
+<header class="topnav">
+  <a class="brand" href="#accueil">
+    <span class="monogram" id="monogram">LA</span>
+    <span><b id="brandName">Legaid Amine</b><small id="brandBase">Promotion Immobilière</small></span>
+  </a>
+  <nav class="navlinks" id="deskNav">
+    <a href="#accueil" data-nav="accueil" class="active">Accueil</a>
+    <a href="#projets" data-nav="projets">Nos projets</a>
+    <a href="#apropos" data-nav="apropos">À propos</a>
+    <a href="#contact" data-nav="contact">Contact</a>
+  </nav>
+  <div class="navactions">
+    <button class="langbtn" id="langBtn">عربية</button>
+    <a class="wabtn" id="navWhatsapp" href="#" target="_blank">WhatsApp</a>
+    <a class="admin-dot" href="admin.html" title="Admin">⚙</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="accueil" style="padding:0">
+  <video id="heroVideo" autoplay muted loop playsinline></video>
+  <div class="shade"></div>
+  <div class="side-social">
+    <a id="ssTiktok" href="#" target="_blank">TikTok</a>
+    <a id="ssInsta" href="#" target="_blank">Instagram</a>
+    <a id="ssFb" href="#" target="_blank">Facebook</a>
+  </div>
+  <div class="hero-inner">
+    <span class="hero-kicker" id="heroKicker">Promotion immobilière — Alger</span>
+    <h1 id="heroTitle">On ne vend pas des murs, on livre des adresses.</h1>
+    <p class="sub" id="heroSub"></p>
+    <div class="hero-ctas">
+      <a class="btn gold" href="#projets" id="ctaProjects">Voir nos projets →</a>
+      <a class="btn ghost" id="ctaWhatsapp" href="#" target="_blank">Parler sur WhatsApp</a>
+    </div>
+    <div class="hero-meta" id="heroStats"></div>
+  </div>
+  <div class="scroll-arch"><span></span></div>
+</section>
+<div class="curve"><svg viewBox="0 0 1440 70" preserveAspectRatio="none"><path d="M0,0 C480,70 960,70 1440,0 L1440,0 L0,0 Z" fill="#c9a24b"/></svg></div>
+
+<!-- MARQUEE -->
+<div class="marquee"><div id="marqueeTxt"></div></div>
+
+<!-- PROJETS -->
+<section id="projets">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <span class="eyebrow" id="projEyebrow">Nos chantiers</span>
+        <h2 id="projTitle">Des adresses, pas des promesses.</h2>
+      </div>
+      <div style="display:grid;gap:.8rem;justify-items:end">
+        <p id="projSub">Chaque projet avec photos réelles, plans lisibles et localisation Maps. Cliquez pour la galerie complète.</p>
+        <div class="filters" id="filters">
+          <button data-f="all" class="on">Tous</button>
+          <button data-f="encours">En cours</button>
+          <button data-f="livre">Livrés</button>
+        </div>
+      </div>
+    </div>
+    <div id="projectsList"></div>
+  </div>
+</section>
+
+<!-- A PROPOS -->
+<section class="about" id="apropos">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="blob reveal">
+        <img class="main" id="aboutImg" src="" alt="Chantier Legaid Amine">
+        <div class="badge-rot"><span><b id="aboutYears" style="font-size:1.8rem;display:block">15</b><span id="aboutYearsLbl" style="font-size:.7rem">ans de chantier</span></span></div>
+      </div>
+      <div class="reveal">
+        <span class="eyebrow" style="color:var(--gold)">À propos</span>
+        <h2 id="aboutTitle" style="font-size:clamp(2rem,4.5vw,3.4rem);margin:.5rem 0">Bâtisseurs, pas vendeurs.</h2>
+        <p id="aboutText" style="line-height:1.8;opacity:.9"></p>
+        <div class="values" id="aboutValues"></div>
+        <div class="timeline">
+          <div><b>01 — Visite</b> <span id="tl1">On visite le terrain ensemble, plans en main.</span></div>
+          <div><b>02 — Suivi</b> <span id="tl2">Vidéos chantier chaque étape, groupe WhatsApp dédié.</span></div>
+          <div><b>03 — Clés</b> <span id="tl3">Acte, garanties, et SAV même après emménagement.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="height:3rem"></div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <span class="eyebrow">Contact</span>
+    <h2 class="big-cta serif" id="contactTitle">Parlons de votre futur chez-vous.</h2>
+    <div class="contact-grid">
+      <div class="reveal">
+        <p id="contactSub" style="opacity:.7;line-height:1.7">Appel, WhatsApp ou visite au bureau. Réponse le jour même, plans PDF sur demande.</p>
+        <div class="infos" id="contactInfos"></div>
+        <div style="display:flex;gap:.6rem;flex-wrap:wrap" id="socialBtns"></div>
+      </div>
+      <div class="reveal">
+        <div class="map-arch"><iframe id="mapFrame" loading="lazy" title="Carte"></iframe></div>
+        <div class="map-btns">
+          <a class="btn dark" id="mapsLink" href="#" target="_blank">📍 Ouvrir dans Google Maps</a>
+          <a class="btn line" id="waLink2" href="#" target="_blank">💬 Devis WhatsApp direct</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div><b class="serif" style="font-size:1.3rem" id="footName">Legaid Amine</b><br><small id="footBase" style="opacity:.6">Promotion Immobilière — Alger</small></div>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap">
+      <a href="#accueil">Accueil</a><a href="#projets">Projets</a><a href="#apropos">À propos</a><a href="#contact">Contact</a>
+      <a href="admin.html">Admin ⚙</a>
+    </div>
+    <small style="opacity:.55">© <span id="year"></span> Legaid Amine — Tous droits réservés</small>
+  </div>
+</footer>
+
+<!-- BOTTOM NAV MOBILE -->
+<nav class="bottomnav" id="bottomNav">
+  <a href="#accueil" data-nav="accueil" class="active">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10.5 12 3l9 7.5V21H3z"/><path d="M9 21v-6h6v6"/></svg>
+    <span data-lbl="home">Accueil</span></a>
+  <a href="#projets" data-nav="projets">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 21v-4h6v4"/></svg>
+    <span data-lbl="proj">Projets</span></a>
+  <a href="#apropos" data-nav="apropos">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>
+    <span data-lbl="about">À propos</span></a>
+  <a href="#contact" data-nav="contact">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.5L3 21l2-5.4A8.5 8.5 0 1 1 21 11.5z"/></svg>
+    <span data-lbl="contact">Contact</span></a>
+</nav>
+
+<!-- MODAL PROJET -->
+<div class="modal" id="modal"><div class="bg" id="modalBg"></div>
+  <div class="sheet"><button class="x" id="modalX">✕</button><div class="sheet-grid" id="modalBody"></div></div>
+</div>
+
+<script src="js/store.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
