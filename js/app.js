@@ -46,7 +46,8 @@
     applyColors();
 
     // brand
-    $("#monogram").textContent = DATA.site.monogram || "LA";
+    const logoUrl = DATA.site.logo;
+    $("#monogram").innerHTML = logoUrl ? `<img src="${logoUrl}" alt="logo">` : (DATA.site.monogram || "LA");
     $("#brandName").textContent = pick(DATA.site.name_fr, DATA.site.name_ar);
     $("#brandBase").textContent = pick(DATA.site.baseline_fr, DATA.site.baseline_ar);
     $("#footName").textContent = pick(DATA.site.name_fr, DATA.site.name_ar);

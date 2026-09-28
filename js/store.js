@@ -9,7 +9,8 @@
       name_ar: "لقايد أمين",
       baseline_fr: "Promotion Immobilière",
       baseline_ar: "ترقية عقارية",
-      monogram: "LA"
+      monogram: "LA",
+      logo: "",
     },
     colors: {
       bg: "#0c1a15",

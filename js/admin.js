@@ -38,6 +38,8 @@
       <div class="grid2">${F("Nom (FR)", "name_fr", "site")}${F("Nom (AR)", "name_ar", "site")}
       ${F("Baseline (FR)", "baseline_fr", "site")}${F("Baseline (AR)", "baseline_ar", "site")}</div>
       ${F("Monogramme (2 lettres)", "monogram", "site")}
+      ${F("Logo (URL image)", "logo", "site")}
+      <div class="field"><label>Ou importer le logo (PNG / JPG)</label><input type="file" id="logoFile" accept="image/*"></div>
       <div class="field"><label>Texte défilant (FR)</label><textarea data-k="fr" data-o="marquee">${DATA.marquee.fr}</textarea></div>
       <div class="field"><label>Texte défilant (AR)</label><textarea data-k="ar" data-o="marquee">${DATA.marquee.ar}</textarea></div>
       <h3>Stats accueil (4)</h3>
@@ -150,6 +152,18 @@
     root.querySelectorAll("[data-color]").forEach(el => {
       el.oninput = () => { DATA.colors[el.dataset.color] = el.value; };
     });
+    const lf = root.querySelector("#logoFile");
+    if (lf) lf.onchange = () => {
+      const f = lf.files[0]; if (!f) return;
+      const r = new FileReader();
+      r.onload = () => {
+        DATA.site.logo = r.result;
+        const inp = root.querySelector('[data-k="logo"]');
+        if (inp) inp.value = r.result;
+        save(true); toast("Logo importé — cliquez Enregistrer");
+      };
+      r.readAsDataURL(f);
+    };
     const vf = $("#vals_fr"); if (vf) vf.oninput = () => DATA.about.values_fr = vf.value.split("\n").filter(Boolean);
     const va = $("#vals_ar"); if (va) va.oninput = () => DATA.about.values_ar = va.value.split("\n").filter(Boolean);
     const wb = $("#wipeBtn"); if (wb) wb.onclick = () => { if (confirm("Tout effacer ?")) { DATA = window.LEGAID.reset(); renderForm(); toast("Reset OK"); } };
