@@ -4,6 +4,7 @@
   let DATA = window.LEGAID.load();
   let tab = "general";
   let editingProject = null;
+  const icons = () => { if (window.lucide) lucide.createIcons(); };
 
   const TABS = [
     ["general", "Général"], ["hero", "Accueil + Vidéo"], ["projects", "Projets"],
@@ -18,7 +19,7 @@
   function save(silent) {
     window.LEGAID.save(DATA);
     $("#sName").textContent = DATA.site.name_fr;
-    if (!silent) toast("✅ Enregistré — visible sur le site");
+    if (!silent) toast("Enregistré — visible sur le site");
   }
   const F = (label, key, obj, type = "text", ph = "") =>
     `<div class="field"><label>${label}</label>${type === "textarea"
@@ -57,9 +58,9 @@
       const list = DATA.projects.map(p => `
         <div class="prow-admin"><div style="display:flex;gap:.8rem;align-items:center">
           <img src="${p.images[0] || ""}"><div><b>${p.title_fr}</b><br><small>${p.location_fr} • ${p.status}</small></div></div>
-          <div style="display:flex;gap:.4rem"><button class="btn-b" data-edit="${p.id}">✏</button>
-          <button class="btn-danger" data-del="${p.id}">🗑</button></div></div>`).join("");
-      let editor = `<button class="btn-a" id="newProj">+ Nouveau projet</button>`;
+          <div style="display:flex;gap:.4rem"><button class="btn-b" data-edit="${p.id}"><i data-lucide="pencil"></i></button>
+          <button class="btn-danger" data-del="${p.id}"><i data-lucide="trash-2"></i></button></div></div>`).join("");
+      let editor = `<button class="btn-a" id="newProj"><i data-lucide="plus"></i> Nouveau projet</button>`;
       if (editingProject) {
         const p = DATA.projects.find(x => x.id === editingProject);
         if (p) editor += `<div style="border:1px solid #c9a24b;border-radius:16px;padding:1rem;display:grid;gap:.8rem">
@@ -81,14 +82,14 @@
           </div>
           <div class="field"><label>Images (1 URL par ligne)</label><textarea id="ep_images" style="min-height:110px">${p.images.join("\n")}</textarea></div>
           <div class="field"><label>Lien Google Maps du projet</label><input id="ep_maps" value="${p.mapsUrl}"></div>
-          <div class="abtns"><button class="btn-a" id="saveProj">💾 Sauver projet</button><button class="btn-b" id="closeProj">Fermer</button></div>
+          <div class="abtns"><button class="btn-a" id="saveProj"><i data-lucide="save"></i> Sauver projet</button><button class="btn-b" id="closeProj">Fermer</button></div>
         </div>`;
       }
       B.innerHTML = list + `<div style="height:.6rem"></div>` + editor;
       B.querySelectorAll("[data-edit]").forEach(x => x.onclick = () => { editingProject = x.dataset.edit; renderForm(); });
       B.querySelectorAll("[data-del]").forEach(x => x.onclick = () => {
         if (!confirm("Supprimer ce projet ?")) return;
-        DATA.projects = DATA.projects.filter(p => p.id !== x.dataset.del); save(true); renderForm(); toast("🗑 Projet supprimé");
+        DATA.projects = DATA.projects.filter(p => p.id !== x.dataset.del); save(true); renderForm(); toast("Projet supprimé");
       });
       const np = $("#newProj"); if (np) np.onclick = () => {
         const id = "p" + Date.now();
@@ -136,6 +137,7 @@
       <div class="abtns"><button class="btn-danger" id="wipeBtn">Effacer toutes les données locales</button></div>`;
 
     bindInputs(B);
+    icons();
   }
 
   function bindInputs(root) {
@@ -159,8 +161,8 @@
   }
   $("#loginBtn").onclick = () => {
     if ($("#pwd").value === DATA.settings.password) {
-      sessionStorage.setItem("legaid_admin", "1"); check(); toast("Bienvenue 👋");
-    } else toast("❌ Mot de passe incorrect");
+      sessionStorage.setItem("legaid_admin", "1"); check(); toast("Bienvenue");
+    } else toast("Mot de passe incorrect");
   };
   $("#logoutBtn").onclick = () => { sessionStorage.removeItem("legaid_admin"); location.reload(); };
   $("#saveBtn").onclick = () => save();
@@ -172,10 +174,10 @@
   $("#importFile").onchange = (e) => {
     const f = e.target.files[0]; if (!f) return;
     const r = new FileReader();
-    r.onload = () => { try { DATA = JSON.parse(r.result); save(); renderForm(); toast("✅ Importé"); } catch { toast("❌ Fichier invalide"); } };
+    r.onload = () => { try { DATA = JSON.parse(r.result); save(); renderForm(); toast("Importé"); } catch { toast("Fichier invalide"); } };
     r.readAsText(f);
   };
-  $("#resetBtn").onclick = () => { if (confirm("Revenir au contenu d'origine ?")) { DATA = window.LEGAID.reset(); renderForm(); toast("↺ Réinitialisé"); } };
+  $("#resetBtn").onclick = () => { if (confirm("Revenir au contenu d'origine ?")) { DATA = window.LEGAID.reset(); renderForm(); toast("Réinitialisé"); } };
 
-  renderTabs(); renderForm(); check();
+  renderTabs(); renderForm(); check(); icons();
 })();

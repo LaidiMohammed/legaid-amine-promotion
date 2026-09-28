@@ -42,7 +42,7 @@ small.hint{opacity:.6}
   <h2 class="serif">Admin Legaid Amine</h2>
   <p style="opacity:.7">Gérez tout le site : vidéo, projets, textes FR/AR, contact, carte, couleurs.</p>
   <div class="field" style="text-align:left;margin:1rem 0"><label>Mot de passe</label><input type="password" id="pwd" placeholder="••••••••"></div>
-  <button class="btn-a" id="loginBtn" style="width:100%">Entrer →</button>
+  <button class="btn-a" id="loginBtn" style="width:100%">Entrer <i data-lucide="arrow-right"></i></button>
   <p><small class="hint">Défaut : amine2026 (changeable dans Sécurité)</small></p>
   <p><a href="index.html" style="color:#c9a24b">← Retour au site</a></p>
 </div>
@@ -50,25 +50,26 @@ small.hint{opacity:.6}
 <div class="admin-wrap hidden" id="panel">
 <div class="acard">
   <div class="ahead">
-    <b class="serif" style="font-size:1.3rem">⚙ Panneau Admin — <span id="sName">Legaid Amine</span></b>
+    <b class="serif" style="font-size:1.3rem"><i data-lucide="settings"></i> Panneau Admin — <span id="sName">Legaid Amine</span></b>
     <div class="abtns">
-      <a href="index.html" target="_blank">👁 Voir le site</a>
-      <button class="btn-b" id="exportBtn">⬇ Export</button>
-      <button class="btn-b" id="importBtn">⬆ Import</button>
+      <a href="index.html" target="_blank"><i data-lucide="eye"></i> Voir le site</a>
+      <button class="btn-b" id="exportBtn"><i data-lucide="download"></i> Export</button>
+      <button class="btn-b" id="importBtn"><i data-lucide="upload"></i> Import</button>
       <input type="file" id="importFile" accept=".json" class="hidden">
-      <button class="btn-b" id="resetBtn">↺ Reset</button>
-      <button class="btn-b" id="logoutBtn">Sortie</button>
+      <button class="btn-b" id="resetBtn"><i data-lucide="rotate-ccw"></i> Reset</button>
+      <button class="btn-b" id="logoutBtn"><i data-lucide="log-out"></i> Sortie</button>
     </div>
   </div>
   <div class="tabs" id="tabs"></div>
   <div class="abody" id="formBody"></div>
   <div style="padding:0 1.4rem 1.4rem;display:flex;gap:.6rem;flex-wrap:wrap">
-    <button class="btn-a" id="saveBtn">💾 Enregistrer tout</button>
+    <button class="btn-a" id="saveBtn"><i data-lucide="save"></i> Enregistrer tout</button>
     <small class="hint">Sauvegarde locale instantanée — visible sur le site dès refresh.</small>
   </div>
 </div>
 </div>
 
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 <script src="js/store.js"></script>
 <script src="js/admin.js"></script>
 </body>

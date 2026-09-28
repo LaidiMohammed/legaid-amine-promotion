@@ -27,6 +27,7 @@
   };
   const t = (k) => T[lang][k] || k;
   const pick = (fr, ar) => (lang === "ar" ? ar || fr : fr || ar);
+  const icons = () => { if (window.lucide) lucide.createIcons(); };
 
   function applyColors() {
     const r = document.documentElement.style;
@@ -82,14 +83,14 @@
     $("#heroSub").textContent = pick(DATA.hero.sub_fr, DATA.hero.sub_ar);
     $("#ctaProjects").textContent = pick(DATA.hero.cta_projects_fr, DATA.hero.cta_projects_ar) + " →";
     const wa = `https://wa.me/${DATA.contact.whatsapp}?text=${encodeURIComponent(lang === "ar" ? "سلام، مهتم بمشاريعكم" : "Bonjour, je suis intéressé par vos projets")}`;
-    $("#ctaWhatsapp").textContent = "💬 " + pick(DATA.hero.cta_contact_fr, DATA.hero.cta_contact_ar);
+    $("#ctaWhatsapp").innerHTML = '<i data-lucide="message-circle"></i> ' + pick(DATA.hero.cta_contact_fr, DATA.hero.cta_contact_ar);
     $("#ctaWhatsapp").href = wa;
     $("#navWhatsapp").href = wa;
     $("#ssTiktok").href = DATA.socials.tiktok; $("#ssInsta").href = DATA.socials.instagram; $("#ssFb").href = DATA.socials.facebook;
 
     // stats
     $("#heroStats").innerHTML = DATA.stats.map(s =>
-      `<span>✦ <b>${s.value}</b> ${pick(s.label_fr, s.label_ar)}</span>`).join("");
+      `<span><i data-lucide="badge-check"></i> <b>${s.value}</b> ${pick(s.label_fr, s.label_ar)}</span>`).join("");
 
     // marquee
     const mtxt = pick(DATA.marquee.fr, DATA.marquee.ar);
@@ -106,6 +107,7 @@
     renderProjects();
     renderAbout();
     renderContact(wa);
+    icons();
     observe();
   }
 
@@ -127,8 +129,8 @@
           <p class="pdesc">${pick(p.desc_fr, p.desc_ar)}</p>
           <div class="thumbs">${p.images.slice(0, 3).map(im => `<img src="${im}" loading="lazy">`).join("")}</div>
           <div class="prow">
-            <button class="btn dark" onclick="openProject('${p.id}')">◉ ${t("details")}</button>
-            <a class="btn line" href="${p.mapsUrl}" target="_blank">📍 ${t("maps")}</a>
+            <button class="btn dark" onclick="openProject('${p.id}')"><i data-lucide="expand"></i> ${t("details")}</button>
+            <a class="btn line" href="${p.mapsUrl}" target="_blank"><i data-lucide="map-pin"></i> ${t("maps")}</a>
           </div>
         </div>
       </article>`;
@@ -142,7 +144,7 @@
     $("#aboutYears").textContent = DATA.about.years;
     $("#aboutYearsLbl").textContent = pick(DATA.about.years_label_fr, DATA.about.years_label_ar);
     const vals = lang === "ar" ? DATA.about.values_ar : DATA.about.values_fr;
-    $("#aboutValues").innerHTML = (vals || []).map(v => `<div>✓ ${v}</div>`).join("");
+    $("#aboutValues").innerHTML = (vals || []).map(v => `<div><i data-lucide="check"></i> ${v}</div>`).join("");
     $("#tl1").textContent = t("tl1"); $("#tl2").textContent = t("tl2"); $("#tl3").textContent = t("tl3");
   }
 
@@ -150,16 +152,18 @@
     $("#contactTitle").textContent = lang === "ar" ? "لنتحدث عن بيتكم القادم." : "Parlons de votre futur chez-vous.";
     $("#contactSub").textContent = t("contactSub");
     $("#contactInfos").innerHTML = `
-      <a href="tel:${DATA.contact.phone.replace(/\s/g, "")}"><span class="icon">📞</span><span><b>${DATA.contact.phone}</b><br><small>${pick(DATA.contact.hours_fr, DATA.contact.hours_ar)}</small></span></a>
-      <a href="${wa}" target="_blank"><span class="icon">💬</span><span><b>WhatsApp direct</b><br><small>${DATA.contact.email}</small></span></a>
-      <div class="item"><span class="icon">📍</span><span><b>${pick(DATA.contact.address_fr, DATA.contact.address_ar)}</b><br><small>Maps ↓</small></span></div>`;
+      <a href="tel:${DATA.contact.phone.replace(/\s/g, "")}"><span class="icon"><i data-lucide="phone"></i></span><span><b>${DATA.contact.phone}</b><br><small>${pick(DATA.contact.hours_fr, DATA.contact.hours_ar)}</small></span></a>
+      <a href="${wa}" target="_blank"><span class="icon"><i data-lucide="message-circle"></i></span><span><b>WhatsApp direct</b><br><small>${DATA.contact.email}</small></span></a>
+      <div class="item"><span class="icon"><i data-lucide="map-pin"></i></span><span><b>${pick(DATA.contact.address_fr, DATA.contact.address_ar)}</b><br><small>Maps ↓</small></span></div>`;
     $("#socialBtns").innerHTML = `
-      <a class="btn dark" href="${DATA.socials.tiktok}" target="_blank">TikTok ↗</a>
-      <a class="btn dark" href="${DATA.socials.instagram}" target="_blank">Instagram ↗</a>
-      <a class="btn line" href="${DATA.socials.facebook}" target="_blank">Facebook ↗</a>`;
+      <a class="btn dark" href="${DATA.socials.tiktok}" target="_blank">TikTok <i data-lucide="arrow-up-right"></i></a>
+      <a class="btn dark" href="${DATA.socials.instagram}" target="_blank">Instagram <i data-lucide="arrow-up-right"></i></a>
+      <a class="btn line" href="${DATA.socials.facebook}" target="_blank">Facebook <i data-lucide="arrow-up-right"></i></a>`;
     $("#mapFrame").src = DATA.contact.mapEmbed;
     $("#mapsLink").href = DATA.contact.mapsLink;
+    $("#mapsLink").innerHTML = '<i data-lucide="map-pin"></i> ' + (lang === "ar" ? "فتح في خرائط جوجل" : "Ouvrir dans Google Maps");
     $("#waLink2").href = wa;
+    $("#waLink2").innerHTML = '<i data-lucide="message-circle"></i> ' + (lang === "ar" ? "عرض سعر عبر واتساب" : "Devis WhatsApp direct");
   }
 
   // modal
@@ -176,10 +180,11 @@
         <p style="line-height:1.7;opacity:.85">${pick(p.desc_fr, p.desc_ar)}</p>
         <p><b>${p.price}</b></p>
         <div class="prow">
-          <a class="btn gold" style="background:var(--gold)" target="_blank" href="https://wa.me/${DATA.contact.whatsapp}?text=${encodeURIComponent((lang === "ar" ? "مهتم بـ: " : "Intéressé par : ") + pick(p.title_fr, p.title_ar))}">💬 WhatsApp</a>
-          <a class="btn line" target="_blank" href="${p.mapsUrl}">📍 Maps</a>
+          <a class="btn gold" style="background:var(--gold)" target="_blank" href="https://wa.me/${DATA.contact.whatsapp}?text=${encodeURIComponent((lang === "ar" ? "مهتم بـ: " : "Intéressé par : ") + pick(p.title_fr, p.title_ar))}"><i data-lucide="message-circle"></i> WhatsApp</a>
+          <a class="btn line" target="_blank" href="${p.mapsUrl}"><i data-lucide="map-pin"></i> Maps</a>
         </div></div>`;
     $("#modal").classList.add("open");
+    icons();
   };
   $("#modalX").onclick = () => $("#modal").classList.remove("open");
   $("#modalBg").onclick = () => $("#modal").classList.remove("open");
